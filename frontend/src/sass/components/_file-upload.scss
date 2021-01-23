@@ -1,0 +1,32 @@
+.file-upload {
+  padding: 2rem;
+
+  &__drag {
+    background-color: $bluegray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    height: 40rem;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    color: white;
+    font-size: 8rem;
+    margin-bottom: 1rem;
+
+  }
+
+  &__submit {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

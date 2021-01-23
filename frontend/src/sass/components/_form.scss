@@ -1,0 +1,155 @@
+.form {
+  &__input {
+    font-family: $paragraph-font;
+    font-size: 1.8rem;
+    color: $darkgray !important;
+    background-color: white;
+    border-radius: 4px;
+    border: 2px solid $blue;
+    padding: 1rem 2rem;
+    max-width: 100%;
+    width: 100%;
+    
+    &:hover {
+      border: 2px solid $darkblue;
+      transition: 0.2s;
+    }
+    &:focus {
+      border: 2px solid $darkblue;
+      outline: none;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+    &:placeholder-shown {
+      color: $gray;
+    }
+
+    &--sm {
+      padding: .5rem 1rem;
+      font-size: 1.6rem;
+    }
+
+    &--ko {
+      font-family: $paragraph-font;
+      color: $darkgray;
+      background-color: white;
+      border-radius: 4px;
+      border: 2px solid white;
+      &:hover {
+        background-color: $bluegray;
+        border: 2px solid $bluegray;
+        transition: 0.2s;
+      }
+      &:focus {
+        border: 2px solid $bluegray;
+        background-color: $bluegray;
+        outline: none;
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+      &:placeholder-shown {
+        color: $gray;
+      }
+    }
+  }
+  &__textarea {
+    width: 100%;
+    color: $darkgray;
+    background-color: white;
+    border-radius: 4px;
+    border: 2px solid $blue;
+    padding: .5rem 3rem;
+    resize: none;
+    font-size: 1.6rem;
+    
+    & > * {
+      background-color: transparent !important;
+      color: black !important;
+      font-family: $paragraph-font !important;
+      font-size: 1.6rem !important;
+    }
+    &:hover {
+      border: 2px solid $darkblue;
+      transition: 0.2s;
+    }
+    &:focus {
+      border: 2px solid $darkblue;
+      outline: none;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+    &:placeholder-shown {
+      color: $gray;
+    }
+    &--ko {
+      border: 2px solid white;
+      &:hover {
+        background-color: $bluegray !important;
+        border: 2px solid $bluegray !important;
+        transition: 0.2s;
+      }
+      &:focus {
+        border: 2px solid $bluegray;
+        background-color: $bluegray;
+        outline: none;
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+      &:placeholder-shown {
+        color: $gray;
+      }
+    }
+    
+    &-submit {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      border: none;
+      background-color: transparent;
+      & > * {
+        color: $blue;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__label {
+    font-family: $header-font;
+    font-size: 1.8rem;
+    color: $blue !important;
+    &--ko {
+      color: white !important;
+    }
+  }
+
+  &__file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    + .js-labelFile {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      .icon:before {
+        //font-awesome
+        content: "\f093";
+      }
+      &.has-file {
+        .icon:before {
+          //font-awesome
+          content: "\f00c";
+          color: #5aac7b;
+        }
+      }
+    }
+  }
+}

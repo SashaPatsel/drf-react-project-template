@@ -1,0 +1,20 @@
+.loading {
+  &__img {
+    // animation: fullRotate 4s forwards infinite ease-in-out;
+
+    &--sm {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &--md {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &--lg {
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+}

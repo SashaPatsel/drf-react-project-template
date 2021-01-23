@@ -1,0 +1,331 @@
+.icon {
+  color: $blue;
+
+  &:hover {
+    transition: .2s;
+    cursor: pointer;
+    color: $darkblue;
+    font-weight: 700;
+  }
+
+  &--lg {
+    font-size: 3.2rem;
+  }
+
+  &--md {
+    font-size: 2.4rem;
+  }
+
+  &--sm {
+    font-size: 1.8rem;
+  }
+
+  &--ko {
+    color: white;
+
+    &:hover {
+      transition: .2s;
+      cursor: pointer;
+      color: $yellow;
+      font-weight: 700;
+    }
+  }
+  // custom change for icons
+  &-icon {
+
+    &__send {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+@font-face {
+  font-family: 'icons';
+  src:  url('./fonts/icons/icomoon.eot?69tyyc');
+  src:  url('./fonts/icons/icomoon.eot?69tyyc#iefix') format('embedded-opentype'),
+    url('./fonts/icons/icomoon.ttf?69tyyc') format('truetype'),
+    url('./fonts/icons/icomoon.woff?69tyyc') format('woff'),
+    url('./fonts/icons/icomoon.svg?69tyyc#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon__visible1:before {
+  content: "\e900";
+  color: inherit;
+}
+.icon-icon__invisible:before {
+  content: "\e901";
+  color: inherit;
+}
+.icon-icon__account:before {
+  content: "\e95d";
+  color: inherit;
+}
+.icon-icon__add:before {
+  content: "\e95e";
+  color: inherit;
+}
+.icon-icon__adduser:before {
+  content: "\e95f";
+  color: inherit;
+}
+.icon-icon__apps:before {
+  content: "\e960";
+  color: inherit;
+}
+.icon-icon__attach:before {
+  content: "\e961";
+  color: inherit;
+}
+.icon-icon__bell:before {
+  content: "\e962";
+  color: inherit;
+}
+.icon-icon__calendar:before {
+  content: "\e963";
+  color: inherit;
+}
+.icon-icon__camera:before {
+  content: "\e964";
+  color: inherit;
+}
+.icon-icon__chat:before {
+  content: "\e933";
+  color: inherit;
+}
+.icon-icon__comment:before {
+  content: "\e934";
+  color: inherit;
+}
+.icon-icon__crosshairs:before {
+  content: "\e935";
+  color: inherit;
+}
+.icon-icon__document:before {
+  content: "\e936";
+  color: inherit;
+}
+.icon-icon__download:before {
+  content: "\e937";
+  color: inherit;
+}
+.icon-icon__duplicate:before {
+  content: "\e938";
+  color: inherit;
+}
+.icon-icon__edit:before {
+  content: "\e939";
+  color: inherit;
+}
+.icon-icon__error:before {
+  content: "\e93a";
+  color: inherit;
+}
+.icon-icon__externallink:before {
+  content: "\e93b";
+  color: inherit;
+}
+.icon-icon__github:before {
+  content: "\e93c";
+  color: inherit;
+}
+.icon-icon__help:before {
+  content: "\e93d";
+  color: inherit;
+}
+.icon-icon__image:before {
+  content: "\e93e";
+  color: inherit;
+}
+.icon-icon__invisible1:before {
+  content: "\e902";
+  color: inherit;
+}
+.icon-icon__line:before {
+  content: "\e93f";
+  color: inherit;
+}
+.icon-icon__link:before {
+  content: "\e940";
+  color: inherit;
+}
+.icon-icon__marker:before {
+  content: "\e941";
+  color: inherit;
+}
+.icon-icon__menu:before {
+  content: "\e942";
+  color: inherit;
+}
+.icon-icon__minus:before {
+  content: "\e943";
+  color: inherit;
+}
+.icon-icon__move:before {
+  content: "\e944";
+  color: inherit;
+}
+.icon-icon__network:before {
+  content: "\e945";
+  color: inherit;
+}
+.icon-icon__new:before {
+  content: "\e946";
+  color: inherit;
+}
+.icon-icon__personalinfo:before {
+  content: "\e947";
+  color: inherit;
+}
+.icon-icon__plus:before {
+  content: "\e948";
+  color: inherit;
+}
+.icon-icon__polygon:before {
+  content: "\e949";
+  color: inherit;
+}
+.icon-icon__print:before {
+  content: "\e94a";
+  color: inherit;
+}
+.icon-icon__profile:before {
+  content: "\e94b";
+  color: inherit;
+}
+.icon-icon__public:before {
+  content: "\e94c";
+  color: inherit;
+}
+.icon-icon__rectangle:before {
+  content: "\e94d";
+  color: inherit;
+}
+.icon-icon__redo:before {
+  content: "\e94e";
+  color: inherit;
+}
+.icon-icon__remove:before {
+  content: "\e94f";
+  color: inherit;
+}
+.icon-icon__reply:before {
+  content: "\e950";
+  color: inherit;
+}
+.icon-icon__save:before {
+  content: "\e951";
+  color: inherit;
+}
+.icon-icon__search:before {
+  content: "\e952";
+  color: inherit;
+}
+.icon-icon__send:before {
+  content: "\e953";
+  color: inherit;
+}
+.icon-icon__share:before {
+  content: "\e954";
+  color: inherit;
+}
+.icon-icon__star:before {
+  content: "\e955";
+  color: inherit;
+}
+.icon-icon__success:before {
+  content: "\e956";
+  color: inherit;
+}
+.icon-icon__trash:before {
+  content: "\e957";
+  color: inherit;
+}
+.icon-icon__undo:before {
+  content: "\e958";
+  color: inherit;
+}
+.icon-icon__upload:before {
+  content: "\e959";
+  color: inherit;
+}
+.icon-icon__video:before {
+  content: "\e95a";
+  color: inherit;
+}
+.icon-icon__visible:before {
+  content: "\e903";
+  color: inherit;
+}
+.icon-icon__warning:before {
+  content: "\e95c";
+  color: inherit;
+}
+.icon-icon__works:before {
+  content: "\e95b";
+  color: inherit;
+}
+
+
+
+@font-face {
+  font-family: 'icons2';
+  src:  url('./fonts/icons2/icomoon.eot?fmwltv');
+  src:  url('./fonts/icons2/icomoon.eot?fmwltv#iefix') format('embedded-opentype'),
+    url('./fonts/icons2/icomoon.ttf?fmwltv') format('truetype'),
+    url('./fonts/icons2/icomoon.woff?fmwltv') format('woff'),
+    url('./fonts/icons2/icomoon.svg?fmwltv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+// [class^="icon2-"], [class*=" icon2-"]
+[class^="icon2-"], [class*=" icon2-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons2' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon2-icon2__caret-down:before {
+  content: "\e933";
+  color: inherit;
+}
+.icon2-icon2__caret-up:before {
+  content: "\e934";
+  color: inherit;
+}
+.icon2-icon2__check:before {
+  content: "\e935";
+  color: inherit;
+}
+.icon2-icon2__close:before {
+  content: "\e936";
+  color: inherit;
+}

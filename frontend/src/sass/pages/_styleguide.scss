@@ -1,0 +1,17 @@
+.styleguide {
+  margin-left: 20%;
+  padding: 4rem;
+
+  &__nav {
+    position: fixed;
+    height: 100vh;
+    width: 20%;
+    border-right: 2px solid $orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

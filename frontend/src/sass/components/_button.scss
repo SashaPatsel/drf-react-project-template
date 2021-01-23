@@ -1,0 +1,118 @@
+.button {
+
+  &:active {
+    outline: none;
+
+  }
+
+  &__primary {
+    font-family: $header-font;
+    font-size: $default-button-font-size;
+    color: white;
+    background-color: $blue;
+    border-radius: 4px;
+    border: 2px solid $blue;
+    box-shadow: $shadow-button-default;
+    padding: 1rem 2rem;
+
+    &:hover {
+      color: $yellow;
+      background-color: $darkblue;
+      border: 2px solid $darkblue;
+      box-shadow: $shadow-button-hover;
+      transform: scale(1.009);
+      transition: .2s;
+    }
+
+    &--ko {
+      color: $blue;
+      background-color: white;
+      box-shadow: $shadow-button-default;
+
+      &:hover {
+        color: $darkblue;
+        background-color: $yellow;
+        border: 2px solid $yellow;
+        box-shadow: $shadow-button-hover;
+      }
+    }
+
+    &--sm {
+      padding: .5rem 1rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__secondary {
+    font-family: $header-font;
+    font-size: $default-button-font-size;
+    color: $blue;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 2px solid $blue;
+    box-shadow: $shadow-button-default;
+    padding: 1rem 2rem;
+
+    &:hover {
+      color: $darkblue;
+      border: 2px solid $darkblue;
+      box-shadow: $shadow-button-hover;
+      transform: scale(1.009);
+      transition: .2s;
+    }
+
+    &--ko {
+      color: white;
+      background-color: transparent;
+      border: 2px solid white;
+      box-shadow: $shadow-button-default;
+
+      &:hover {
+        color: $yellow;
+        background-color: transparent;
+        border: 2px solid $yellow;
+      }
+
+    }
+
+    &--sm {
+      padding: .5rem 1rem;
+      font-size: 1.2rem;
+    }
+  }
+  &__text {
+    font-family: $header-font;
+    font-size: $default-button-font-size;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $darkgray;
+    background-color: transparent;
+    border: none;
+    padding: 1rem 2rem;
+    &:hover {
+      color: $orange;
+      transition: .2s;
+    }
+
+    &:focus {
+      outline: none;
+      text-decoration: underline;
+    }
+
+    &--ko {
+      color: white;
+      background-color: transparent;
+
+      &:hover {
+        color: $yellow;
+      }
+    } 
+
+    &--sm {
+      padding: .5rem 1rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+

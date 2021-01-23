@@ -1,0 +1,82 @@
+.sidenav {
+    display: inline-block;
+    // animation: sidenavClose .4s forwards ease-out;
+    // width: 5rem;
+    width: auto;
+
+    &__active {
+        width: 100%;
+        // animation: sidenavOpen .4s forwards ease-out;
+    }
+    
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: $header-font;
+
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        background-color: $blue;
+        color: white;
+
+
+        &:hover {
+            background-color: $darkblue;
+            color: $yellow;
+            cursor: pointer;
+        }
+
+        &:focus {
+            border-radius: 0;
+            outline: none;
+        }
+
+        &--ko {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: $header-font;
+
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            background-color: white;
+            color: $blue;
+
+            &:hover {
+                // background-color: $lightgray;
+                background-color: $yellow;
+                cursor: pointer;
+            }
+            &:focus {
+                border-radius: 0;
+                outline: none;
+            }
+        }
+
+        &--title {
+            margin-right: 2rem;
+            font-family: $header-font;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        &--icon {
+            &--left {
+                transform: rotate(-90deg);
+            }
+
+            &--right {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__content {
+        overflow-y: auto;
+        
+    }
+}

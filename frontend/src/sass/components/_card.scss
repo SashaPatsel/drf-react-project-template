@@ -1,0 +1,25 @@
+ .card {
+     
+     &__body {
+        position: relative; //This lets us make sure the stripe stays where we want it to
+        width: 10rem;
+        height: 10rem;
+        background-color: $lightgray;
+
+    }
+
+    &__stripe {
+        width: 100%;
+        position: absolute;
+        background-color: $blue;
+        padding: 1rem;
+
+        &--top {
+            top: 0;
+        }
+
+        &--bottom {
+            bottom: 0;
+        }
+    }
+}

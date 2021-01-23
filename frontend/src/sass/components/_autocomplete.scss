@@ -1,0 +1,259 @@
+/*the container must be positioned relative:*/
+.autocomplete {
+  display: inline-block;
+
+  &__items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 9999;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    & > div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: rgba(black, 0.8);
+      border-bottom: 1px solid #d4d4d4;
+      color: white !important;
+
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+
+  &__active {
+    background-color: rgba($color-primary, 1) !important;
+    color: white;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+  }
+
+  &__input {
+    font-family: $paragraph-font;
+    font-size: 1.8rem;
+    color: $darkgray;
+    background-color: black;
+    border-radius: 4px;
+    border: 2px solid $blue;
+    padding: 1rem 2rem;
+    &:hover {
+      border: 2px solid $darkblue;
+      transition: 0.2s;
+    }
+    &:focus {
+      border: 2px solid $darkblue;
+      outline: none;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+    &:placeholder-shown {
+      color: $gray;
+    }
+    &--ko {
+      font-family: $paragraph-font;
+      font-size: 1.8rem;
+      color: $darkgray;
+      background-color: white;
+      border-radius: 4px;
+      border: 2px solid white;
+      padding: 1rem 2rem;
+      &:hover {
+        background-color: $bluegray;
+        border: 2px solid $bluegray;
+        transition: 0.2s;
+      }
+      &:focus {
+        border: 2px solid $bluegray;
+        background-color: $bluegray;
+        outline: none;
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+      &:placeholder-shown {
+        color: $gray;
+      }
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.1rem;
+    font-size: 2rem;
+
+    &:hover > * {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    color: black;
+
+    &--lg {
+      font-size: 3rem;
+    }
+  }
+}
+
+.autocomplete-suggestions {
+  text-align: left;
+  cursor: default;
+  border: 1px solid #ccc;
+  border-top: 0;
+  background: white;
+  color: $blue !important;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', Nimbus Sans, 'Ubuntu', sans-serif !important;
+  font-size: 20px;
+
+  /* core styles should not be changed */
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  max-height: 254px;
+  overflow: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.autocomplete-suggestion {
+  position: relative;
+  padding: 1rem 0.6em;
+  line-height: 23px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.02em;
+  color: #333;
+}
+
+.autocomplete-suggestion b {
+  font-weight: normal;
+  color: #004983 !important;
+}
+.autocomplete-suggestion.selected {
+  background: black;
+  color: white !important;
+}
+
+// REACT AUTOCOMPLETE
+.react-autosuggest {
+  &__container {
+    position: relative;
+    width: 100%;
+  }
+
+  &__input {
+    font-family: $paragraph-font;
+    font-size: 1.8rem;
+    color: $darkgray;
+    background-color: white;
+    border-radius: 4px;
+    border: 2px solid $blue;
+    padding: 1rem 2rem;
+    width: 100%;
+
+    &:hover {
+      border: 2px solid $darkblue;
+      transition: 0.2s;
+    }
+    &:focus {
+      border: 2px solid $darkblue;
+      outline: none;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+    &:placeholder-shown {
+      color: $gray;
+    }
+    &--ko {
+      font-family: $paragraph-font;
+      font-size: 1.8rem;
+      color: $darkgray;
+      background-color: white;
+      border-radius: 4px;
+      border: 2px solid white;
+      padding: 1rem 2rem;
+      &:hover {
+        background-color: $bluegray;
+        border: 2px solid $bluegray;
+        transition: 0.2s;
+      }
+      &:focus {
+        border: 2px solid $bluegray;
+        background-color: $bluegray;
+        outline: none;
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+      &:placeholder-shown {
+        color: $gray;
+      }
+    }
+  }
+
+  &__input--focused {
+    outline: none;
+  }
+
+  &__input--open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__suggestions-container {
+    display: none;
+  }
+
+  &__suggestions-container--open {
+    display: block;
+    position: absolute;
+    top: 5.1rem;
+    width: 100%;
+    border: 1px solid $color-primary;
+    background-color: white;
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2000;
+  }
+
+  &__suggestions-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+  }
+
+  &__suggestion {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    width: 100%;
+    & > * {
+      color: $blue;
+    }
+  }
+
+  &__suggestion--highlighted {
+    background-color: $yellow;
+  }
+}

@@ -1,0 +1,42 @@
+.pagination {
+
+  &__item {
+    color: $color-primary;
+    padding: .5rem 1rem;
+    border: solid 2px $color-primary;
+    font-weight: 900;
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-2;
+      cursor: pointer;
+    }
+
+    &--active {
+      background-color: $color-secondary;
+      
+      &:hover {
+        background-color: $color-secondary !important;
+        cursor: default;
+      }
+    }
+
+    &--inactive {
+      color: $color-grey-dark !important;
+
+      &:hover {
+        background-color: white !important;
+        cursor: default;
+      }
+  
+    }
+  }
+  
+  &__link {
+    font-weight: 900;
+    font-size: 1.3rem;
+  }
+}

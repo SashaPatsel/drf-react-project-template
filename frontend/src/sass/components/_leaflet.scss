@@ -1,0 +1,13 @@
+.leaf-marker-red {
+  filter: hue-rotate(147deg);
+}
+
+.leaf-marker-green {
+  filter: hue-rotate(-68deg);
+}
+
+.leaf-tooltip {
+  background-color: $color-secondary;
+  color: $color-primary !important;
+  font-weight: 700;
+}

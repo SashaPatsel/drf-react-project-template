@@ -1,0 +1,138 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $header-font;
+}
+
+p {
+    font-family: $paragraph-font;
+    line-height: 1.3rem;
+    margin-bottom: 0;
+}
+
+
+label {
+    margin-bottom: 0;
+}
+
+
+.heading {
+
+    &__1 {
+        color: $color-primary;
+        font-size: 4.8rem; 
+        font-weight: 700;
+        &--ko {
+           color: white;
+        }
+    }
+    &__2 {
+        color: $color-primary;
+        font-size: 3.6rem;
+        font-weight: 700;
+        &--ko {
+            color: white;
+        }
+    }
+    &__3 {
+        color: $orange;
+        font-size: 2.8rem;
+        font-weight: 700;
+        &--ko {
+            color: $color-secondary;
+        }
+
+        &--white {
+            color: white;
+        }
+    }
+    &__4 {
+
+        color: $orange;
+        font-size: 2.4rem;
+        &--ko {
+            color: $color-secondary;
+        }
+        
+        &--bold {
+            font-weight: 700;
+        }
+
+    }
+    &__5 {
+        color: $color-primary;
+        font-size: 1.8rem;
+        font-weight: 700;
+        &--ko {
+            color: $color-secondary;
+        }
+    }
+    
+}
+
+.paragraph {
+    &__1 {
+        font-family: $paragraph-font;
+        color: $darkgray;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.5;
+        &--ko {
+            font-family: $paragraph-font;
+            color: white;
+        }
+    }
+    &__2 {
+        font-family: $paragraph-font;
+        color: $darkgray;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        font-weight: 400;
+        &--ko {
+            font-family: $paragraph-font;
+            color: white;
+        }
+    }   
+
+}
+
+
+.subtext {
+    font-family: $paragraph-font;
+    color: $gray !important;
+    font-size: 1.6rem;
+    font-weight: 400;
+    &--ko {
+        font-family: $paragraph-font;
+        color: $color-slate;
+    }
+}
+
+.hyperlink {
+    font-size: 1.6rem;
+    color: $color-primary;
+    text-decoration: underline;
+    font-family: $paragraph-font;
+
+    &:hover {
+        color: $color-primary-dark;
+    }
+
+    &--alt {
+        color: $gray;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &--ko {
+        color: white;
+        &:hover {
+            color: $color-secondary;
+        }
+    
+    }
+}

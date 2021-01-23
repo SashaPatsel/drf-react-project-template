@@ -1,0 +1,49 @@
+.input {
+  &__slider {
+    -webkit-appearance: none;
+    outline: none;
+
+    height: 8px;
+    width: 100%;
+    margin: 4px 0;
+
+    border: 2px solid $blue;
+    border-radius: 5px;
+    background-color: $bluegray;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid $blue;
+      border-radius: 8px;
+      background: $darkblue;
+      cursor: pointer;
+
+      &:active {
+        background: $blue;
+      }
+    }
+
+    &--disabled {
+      opacity: 0.3;
+    }
+
+    &--ko {
+      border: 2px solid white;
+
+      &::-webkit-slider-thumb {
+        border: 2px solid white;
+        background: white;
+
+        &:active {
+          background: $yellow;
+        }
+      }
+
+      &--disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+}

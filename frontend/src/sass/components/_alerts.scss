@@ -1,0 +1,50 @@
+.alert {
+    position: fixed;
+    left: 50%;
+    top: 17%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    padding: 2rem;
+
+    &__close {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 5px;
+
+        & span {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+.alert {
+
+    &__hide {
+        display: none;
+    }
+  
+  }
+
+.alert-toast {
+    background-color: $color-slate !important;
+    // background-color: $tans-black !important;
+    color: $color-grey-light-2 !important;
+    font-weight: 900 !important;
+    font-size: 1.6rem !important;
+    padding: 1rem 2rem 2rem 2rem !important;
+
+    &__success {
+        background: $color-success !important;
+    }
+
+    &__error {
+        background: $color-error !important;
+    }
+
+    &__warning {
+        background: $color-secondary !important;
+    }
+}

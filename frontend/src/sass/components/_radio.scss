@@ -1,0 +1,94 @@
+.radio {
+    &__group {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__btn-group {
+        display: flex;
+    }
+    
+    &__input {
+        display: none;
+    }
+    
+    &__label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+
+        &--ko {
+            color: white;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        margin-bottom: 2rem;
+        line-height: 2;
+    }
+
+    &__text {
+
+    }
+
+    &__button {
+        height: 1.6rem;
+        width: 1.6rem;
+        border: 2px solid $blue;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        left: 0;
+
+        &::after {
+            content: "";
+            display: block; 
+            height: .8rem;
+            width: .8rem;
+            border-radius: 50%;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $darkblue;
+            opacity: 0; 
+            transition: opacity .2s;
+        }
+
+        &:hover {
+            background-color: rgba($darkblue, .3);
+            border: 2px solid $darkblue;
+        }
+
+
+        &--ko {
+            border: 2px solid white;
+
+            &::after {
+                background-color: $yellow;
+            }
+
+            &:hover {
+                background-color: rgba($yellow, .3);
+                border: 2px solid $yellow;
+            }
+        }
+
+        &--alt {
+            border: 5px solid $color-secondary;
+
+            &::after {
+                background-color: $color-secondary;
+            }
+        }
+    }
+
+    &__input:checked ~ &__label &__button::after {
+    opacity: 1;
+    }
+}

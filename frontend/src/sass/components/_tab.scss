@@ -1,0 +1,22 @@
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rem;
+  padding: 2rem 4rem;
+  color: white !important;
+  
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary-light;
+    transition: .2s;
+  }
+  
+  &__active {
+    background-color: $color-primary-dark;
+  }
+
+  &__inactive {
+    background-color: $color-primary;
+  }
+}

@@ -1,0 +1,20 @@
+.edit-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__input {
+    max-width: 80%;
+  }
+  
+  &__text {
+    font-family: $paragraph-font;
+    font-size: 1.8rem;
+    color: $blue;
+
+    &--ko {
+      color: white;
+    }
+  }
+}

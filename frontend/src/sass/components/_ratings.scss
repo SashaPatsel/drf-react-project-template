@@ -1,0 +1,54 @@
+.ratings {
+
+    &__label {
+        text-align: center;
+    }
+
+    &__stars {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__results {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__rating {
+        font-weight: 700;
+        font-size: 5.5rem;
+        
+    }
+
+    &__total {
+
+    }
+}
+
+.stars {
+    font-size: 2rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &1 {
+
+        &:hover {
+            color: gold !important;
+        }
+    }
+
+    &__hover {
+        color: gold !important;
+    }
+
+    &__click {
+        color: gold !important;
+    }
+
+    &__contain {
+        margin-right: 1rem;
+    }
+}

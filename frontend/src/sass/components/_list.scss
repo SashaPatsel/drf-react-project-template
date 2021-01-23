@@ -1,0 +1,54 @@
+.list {
+    // Styles all child elements
+    & > li {
+        // margin: 1rem 0;
+    }
+
+    &__table {
+        
+        & > li {
+            border-top: 2px solid $blue;
+            &:last-child {
+                border-bottom: 2px solid $blue;
+            }
+        }   
+    }
+  
+    &__item {
+        display: flex;
+        align-items: center;
+        background-color: $blue;
+        
+  
+        &--ko {
+            background-color: white;
+        }
+  
+        &-thumbnail {
+  
+        }
+  
+        &-img {
+            width: 7rem;
+            height: 7rem;
+            object-position: center;
+            object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  
+            &--round {
+                border-radius: 50%;
+                margin: 1rem 0 1rem 1rem;
+            }
+  
+            &--square {
+  
+            }
+        }
+  
+        &-body {
+            width: 100%;
+            padding: 1rem 1.5rem;
+        }
+    }
+  
+  
+  }

@@ -1,0 +1,67 @@
+.rc-slider {
+
+  &__group {
+    width: 100%;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__val {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: $color-primary;
+    color: $color-grey-light-2 !important;
+    border-radius: 5px;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+      content:"\A";
+      border-style: solid;
+      border-width: 10px 15px 10px 0;
+      border-color: transparent $color-primary transparent transparent;
+      position: absolute;
+      left: -13px;
+    }
+  }
+
+  &-rail {
+    background-color: $color-secondary !important;
+    // background-color: $color-primary-light !important;
+    height: 10px !important;
+  }
+
+  &-track {
+    background-color: $color-secondary !important;
+    // background-color: $color-primary-light !important;
+    height: 10px !important;
+  }
+
+  &-dot {
+    background-color: $color-primary !important;
+    // background-color: $color-secondary !important;
+
+    border: 2px solid $color-grey-light-2 !important;
+
+    &-active {
+      background-color: $color-primary !important;
+      // background-color: $color-secondary !important;
+      border: 2px solid $color-grey-light-2 !important;  
+    }
+  }
+
+  &-handle {
+    background-color: $color-primary !important;
+    border: 2px solid $color-grey-light-2 !important;  
+    height: 19px !important;
+    width: 19px !important;
+  }
+}

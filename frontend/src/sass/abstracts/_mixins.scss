@@ -1,0 +1,31 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint == phone {
+      //em number calculated by dividing the amount of px by default font size (16px) 
+      @media (max-width: 697px) { @content }; //600px 
+    }
+  
+    @if $breakpoint == t-port {
+      @media (max-width: 56.25em) { @content }; //900px
+    }
+  
+    @if $breakpoint == t-land {
+      @media (max-width: 85em) { @content }; 
+    }
+  
+    @if $breakpoint == l-desk {
+      @media (min-width: 112.5em) { @content }; //1800px
+    }
+}
+
+@mixin center-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

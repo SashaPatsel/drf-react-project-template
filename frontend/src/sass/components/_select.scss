@@ -1,0 +1,64 @@
+.select {
+  display: inline-block;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: $blue;
+    color: white;
+
+    &:hover {
+      background-color: $darkblue;
+      color: $yellow;
+      cursor: pointer;
+    }
+
+    &:focus {
+      border: 1px solid $blue;
+      outline: none;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+    }
+
+    &--title {
+      margin-right: 2rem;
+    }
+
+    &--icon {
+
+    }
+
+    &--ko {
+      background-color: white;
+      color: $blue;
+
+      &:hover {
+        background-color: $yellow;
+        color: $blue;
+      }
+
+      &:focus {
+        border: 1px solid white;
+        outline: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+  
+      }
+  
+    }
+
+
+  }
+
+  &__menu {
+    width: 100%;
+    // animation: dropdown .4s ease-out forwards;
+  }
+
+}

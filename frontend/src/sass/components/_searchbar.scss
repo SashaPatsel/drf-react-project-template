@@ -1,0 +1,64 @@
+.searchbar {
+    // align-self: center;
+    &--nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        @media (max-width: 1000px) {
+            position: static;
+            transform: none;
+        }
+
+        @include responsive(phone) {
+            width: 80%; 
+        }
+
+    }
+
+
+    &__input {
+        
+        &--sm {
+            width: 45rem;
+            padding: 1.4rem;
+            font-size: 1.4rem;
+            // opacity: .4;
+            background-color: rgba(white, .4);
+
+            @include responsive(phone) {
+                width: 100%;  
+            }
+        }
+
+        &--lg {
+            padding: 2rem;
+            font-size: 2rem;
+            width: 80%;
+            display: block;
+            margin: auto;
+        }
+        box-shadow: 0 1rem 1rem rgba(black, .2);
+        border: solid 2px $color-primary;
+        border-radius: 4px;
+
+        &:hover {
+            box-shadow: 0 1.5rem 1rem rgba(black, .3);
+            transform: translateY(-2px);
+            transition: .7s;
+            background-color: rgba(white, 1);
+        }
+
+        &:focus {
+            box-shadow: 0 1.5rem 1rem rgba(black, .3);
+            transform: translateY(-2px);
+            transition: .7s;
+            background-color: rgba(white, 1);
+        }
+    }
+
+    &__error {
+        text-align: center;
+        font-size: 1.7rem;
+    }
+}

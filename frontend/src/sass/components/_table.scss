@@ -1,0 +1,32 @@
+.c-table {
+
+    &__head {
+        margin-bottom: 1rem;
+    }
+
+    &__row {
+        
+        &:not(:last-child) {
+            border-bottom: 1.5px solid $blue;
+        }
+    }
+
+
+    &__h {
+        font-family: $header-font;
+        padding: 1rem 1.5rem;
+        color: $blue;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    &__d {
+        padding: 1rem 1.5rem;
+        font-family: $paragraph-font;
+        color: $darkgray;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+}

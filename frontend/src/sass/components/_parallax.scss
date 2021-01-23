@@ -1,0 +1,15 @@
+.parallax {
+    position: fixed;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover; 
+
+    &--light-grey {
+        background-color: $color-grey-light-2;
+    }
+}
