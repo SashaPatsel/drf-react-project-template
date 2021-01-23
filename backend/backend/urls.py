@@ -40,9 +40,7 @@ urlpatterns = [
     path('', include("pages.urls")),
     path('admin/', admin.site.urls),
     path("api/accounts/", include("accounts.urls")),
-    path("api/changedetection/", include("changedetection.urls")),
-    path("api/earthenticate/", include("changedetection_mobile.urls")),
-    path('api/rrm/', include("rrm.urls")),
+    path("api/myapp/", include("myapp.urls")),
     path("api-token-auth/", veews.obtain_auth_token),
     path("token-auth/", obtain_jwt_token),
     path("auth/", include('rest_framework_social_oauth2.urls'))

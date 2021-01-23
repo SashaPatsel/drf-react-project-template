@@ -17,21 +17,6 @@ from datetime import timedelta
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# PRODUCTION
-try:
-    if os.name == 'nt':
-        import platform
-        OSGEO4W = r"C:\OSGeo4W"
-        if '64' in platform.architecture()[0]:
-            OSGEO4W += "64"
-        assert os.path.isdir(OSGEO4W), "Directory does not exist: " + OSGEO4W
-        os.environ['OSGEO4W_ROOT'] = OSGEO4W
-        os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
-        os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
-        os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
-except:
-    pass
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -40,12 +25,9 @@ except:
 SECRET_KEY = 'mr!mr-0&t1e8^@v&8j#iiz_8*a5lx*#q7jup$h$@=o^e)($=mo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [ "68.183.136.219", "www.conservationist.io", "conservationist.io", "localhost"]
-# DEBUG = False
-
-# ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [ "*"]
 
 
 # Application definition
@@ -67,10 +49,8 @@ INSTALLED_APPS = [
     "rest_framework",
     'rest_framework.authtoken',
     "accounts",
-    "changedetection",
-    "changedetection_mobile",
-    "pages",
-    "rrm"
+    "myapp",
+    "pages"
 ]
 
 MIDDLEWARE = [
@@ -110,23 +90,24 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': "reango_db",
-        "USER": "postgres",
-        "PASSWORD": "password",
-        "HOST": "localhost",
-        "PORT": "5432"
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# CUSTOM
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': "dn_name",
+#         "USER": "postgres",
+#         "PASSWORD": "",
+#         "HOST": "localhost",
+#         "PORT": "5432"
+#     }
+# }
 
 
 # Password validation

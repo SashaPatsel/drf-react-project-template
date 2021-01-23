@@ -45,47 +45,12 @@ class Activate(APIView):
 
             user.is_active = True
             user.save()       
-            if "fws.gov" in user.email or "noaa.gov" in user.email or "usda.gov" in user.email:
-                if "fws.gov" in user.email:
-                    # Create an account for the user
-                    account = Account(first_name=user.first_name, last_name=user.last_name, user=user, photo=get_default_img(), regulator=True, organization="Fish and Wildlife Service")
-                    account.save()
-                elif "noaa.gov" in user.email:
-                    # Create an account for the user
-                    account = Account(first_name=user.first_name, last_name=user.last_name, user=user, photo=get_default_img(), regulator=True, organization="National Marine and Fisheries Service")
-                    account.save()      
-                elif "usda.gov" in user.email:
-                    # Create an account for the user
-                    account = Account(first_name=user.first_name, last_name=user.last_name, user=user, photo=get_default_img(), regulator=True, organization="United States Forest Service")
-                    account.save()            
-                    
-            else: 
-                # Create an account for the user
-                account = Account(first_name=user.first_name, last_name=user.last_name, user=user, photo=get_default_img())
-                account.save()
+            account = Account(first_name=user.first_name, last_name=user.last_name, user=user, photo=get_default_img())
+            account.save()
 
-            # Log the user in
-            # auth.login(req, user)
             return Response(UserSerializer(user).data)
         else:
             return Response({"message": "error"})
-
-class Notifications(APIView):
-    permission_classes = (permissions.AllowAny,)
-
-    def get(self, req, format=None):
-        acctID = req.query_params["id"]
-        account = Account.objects.get(id=acctID)
-        notifications = Notification.objects.filter(account=account).order_by("date_created").reverse()
-        serialized_notifications = NotificationSerializer(notifications, many=True).data
-        return Response(serialized_notifications)
-
-    def put(self, req, format=None):
-        acctID = req.query_params["id"]
-        account = Account.objects.get(id=acctID)
-        notifications = Notification.objects.filter(account=account)
-        notifications.update(seen=True)
-        return Response()
 
 class Register(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -100,13 +65,12 @@ class Register(APIView):
         try:
             invalid = validate_password(password)
         except ValidationError:
-            return JsonResponse({"message": "make a better password, foo"})
+            return Response({"message": "invalid password"})
         #check if passwords match
         if password == password2:
             #check username
             if User.objects.filter(email=email).exists():
-                messages.error(req, "Email already exists")
-                return JsonResponse({"message": "y'already did dat"})
+                return JsonResponse({"message": "Email already exists"})
             else:
                 serializer = UserSerializerWithToken(data=req.data)
                 if serializer.is_valid():
@@ -114,12 +78,12 @@ class Register(APIView):
                     user = User.objects.get(username=username)
                 else: 
                     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-                subject = 'Activate your conservationist.io account.'
+                subject = 'Activate your account'
                 token = Token.objects.create(user=user)
                 token = token.key
                 to_list = [email, settings.EMAIL_HOST_USER]
                 uid = urlsafe_base64_encode(force_bytes(user.pk))
-                send_email("Confirm your Conservationist.io account.", f"<div>Hi {username},</div><div>Thanks for signing up with conservationist.io. To finish your registration, <a href='https://conservationist.io/accounts/activate?uid={uid}&token={token}'>please click here to confirm your registration.</a></div>", to_list)
+                send_email("Confirm your account.", f"<div>Hi {username},</div><div>Thanks for signing up with conservationist.io. To finish your registration, <a href='https://conservationist.io/accounts/activate?uid={uid}&token={token}'>please click here to confirm your registration.</a></div>", to_list)
 
                 return JsonResponse({"message": "success"})
         else: 
@@ -132,7 +96,7 @@ class RequestReset(APIView):
     def post(self, req, format=None):
         email = req.data["email"]
         user = User.objects.get(email=email)
-        message = "Please click on the link below to finish reseting your Conservationist.io password."
+        message = "Please click on the link below to finish reseting your password."
         token = Token.objects.get_or_create(user=user)
         try:
             token = token.key
@@ -152,7 +116,6 @@ class ResetPassword(APIView):
         username = req.data["username"]
         user = User.objects.get(username=username)
         user.set_password(new_password)
-        # invalid = validate_password(password)
         user.save()
         return Response({})
 
@@ -181,13 +144,3 @@ class Users(APIView):
         usernames = User.objects.filter(username__icontains=q)
         username_serializer = UserSerializer(usernames, many=True).data
         return Response(username_serializer)
-
-class FeedbackView(APIView):
-    permission_classes = (permissions.AllowAny,)
-
-    def post(self, req, format=None):
-        text = req.data["feedback"]
-        fb_name = req.data["fbName"]
-        new_feedback = Feedback(fb_text=text, name=fb_name)
-        new_feedback.save()
-        return Response()
